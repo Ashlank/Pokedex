@@ -641,7 +641,7 @@ export default function Pokedex() {
             <div className="header-top">
               <div>
                 <div className="logo">
-                  <img src="../public/favicon.png" alt="Pokédex" width='50' height='50' />
+                  <img src="/favicon.png" alt="Pokédex" width='50' height='50' />
                   Pokédex
                 </div>
                 <span className="logo-sub">By Ashlank</span>
