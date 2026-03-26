@@ -5,6 +5,78 @@ import PokemonCard from "./components/PokemonCard";
 import SparkleIcon from "./components/SparkleIcon";
 import "./App.css";
 
+// IDs de pokémon legendarios y míticos (Pokédex Nacional, Gen 1-9)
+// Fuente: Bulbapedia - Legendary & Mythical Pokémon
+const LEGENDARY_IDS = new Set([
+  // Gen 1
+  144, 145, 146, // Articuno, Zapdos, Moltres
+  150, 151,      // Mewtwo, Mew
+
+  // Gen 2
+  243, 244, 245, // Raikou, Entei, Suicune
+  249, 250,      // Lugia, Ho-Oh
+  251,           // Celebi
+
+  // Gen 3
+  377, 378, 379, // Regirock, Regice, Registeel
+  380, 381,      // Latias, Latios
+  382, 383, 384, // Kyogre, Groudon, Rayquaza
+  385, 386,      // Jirachi, Deoxys
+
+  // Gen 4
+  480, 481, 482, // Uxie, Mesprit, Azelf
+  483, 484,      // Dialga, Palkia
+  485, 486,      // Heatran, Regigigas
+  487,           // Giratina
+  488, 489, 490, // Cresselia, Phione, Manaphy
+  491, 492, 493, // Darkrai, Shaymin, Arceus
+
+  // Gen 5
+  494,           // Victini
+  638, 639, 640, // Cobalion, Terrakion, Virizion
+  641, 642,      // Tornadus, Thundurus
+  643, 644,      // Reshiram, Zekrom
+  645, 646,      // Landorus, Kyurem
+  647, 648, 649, // Keldeo, Meloetta, Genesect
+
+  // Gen 6
+  716, 717, 718, // Xerneas, Yveltal, Zygarde
+  719, 720, 721, // Diancie, Hoopa, Volcanion
+
+  // Gen 7
+  785, 786, 787, 788, // Tapu Koko, Tapu Lele, Tapu Bulu, Tapu Fini
+  789, 790, 791, 792, // Cosmog, Cosmoem, Solgaleo, Lunala
+  793, 794, 795, 796, // Nihilego, Buzzwole, Pheromosa, Xurkitree
+  797, 798, 799,      // Celesteela, Kartana, Guzzlord
+  800,                // Necrozma
+  801, 802,           // Magearna, Marshadow
+  803, 804,           // Poipole, Naganadel
+  805, 806,           // Stakataka, Blacephalon
+  807,                // Zeraora
+  808, 809,           // Meltan, Melmetal
+
+  // Gen 8
+  888, 889,           // Zacian, Zamazenta
+  890,                // Eternatus
+  891, 892,           // Kubfu, Urshifu
+  893,                // Zarude
+  894, 895,           // Regieleki, Regidrago
+  896, 897,           // Glastrier, Spectrier
+  898,                // Calyrex
+
+  // Gen 9
+  1001, 1002, 1003, 1004, // Wo-Chien, Chien-Pao, Ting-Lu, Chi-Yu
+  1007, 1008,             // Koraidon, Miraidon
+  1009, 1010,             // Walking Wake, Iron Leaves
+  1014, 1015, 1016,       // Okidogi, Munkidori, Fezandipiti
+  1017,                   // Ogerpon
+  1020, 1021, 1022, 1023, // Gouging Fire, Raging Bolt, Iron Boulder, Iron Crown
+  1024,                   // Terapagos
+  1025,                   // Pecharunt
+]);
+
+const isLegendary = (id) => LEGENDARY_IDS.has(id);
+
 const PAGE_SIZE = 40;
 
 function useLocalStorage(key, initial) {
@@ -44,6 +116,7 @@ export default function Pokedex() {
   const baseList = activeFilter === "caught"    ? pokemons.filter(p => caught[p.id])
                  : activeFilter === "shiny"     ? pokemons.filter(p => shiny[p.id])
                  : activeFilter === "remaining" ? pokemons.filter(p => !caught[p.id])
+                 : activeFilter === "legendary" ? pokemons.filter(p => isLegendary(p.id))
                  : null;
 
   const filtered = search.trim()
@@ -116,6 +189,13 @@ export default function Pokedex() {
                 <SparkleIcon /> {shinyCount} shinies
               </button>
               <button
+                className={`stat-pill legendary-pill ${activeFilter === "legendary" ? "active" : ""}`}
+                onClick={() => toggleFilter("legendary")}
+                title="Filtrar legendarios"
+                >
+                ⭐ Legendarios
+              </button>
+              <button
                 className={`stat-pill total-pill ${activeFilter === "remaining" ? "active" : ""}`}
                 onClick={() => toggleFilter("remaining")}
                 title="Filtrar restantes"
@@ -142,6 +222,7 @@ export default function Pokedex() {
             {activeFilter === "caught"    && !search.trim() && `${visibleList.length} pokémon atrapados 🎉`}
             {activeFilter === "shiny"     && !search.trim() && `${visibleList.length} shinies ✨`}
             {activeFilter === "remaining" && !search.trim() && `${visibleList.length} pokémon restantes 🎯`}
+            {activeFilter === "legendary" && !search.trim() && `${visibleList.length} legendarios ⭐`}
             {search.trim() && `${visibleList.length} resultado${visibleList.length !== 1 ? "s" : ""} para "${search}"`}
           </div>
         )}

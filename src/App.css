@@ -428,6 +428,17 @@ button.stat-pill:hover {
   box-shadow: 0 2px 12px rgba(100, 100, 200, 0.45);
 }
 
+.stat-pill.legendary-pill {
+  border-color: #e8a000;
+  color: #ffcc44;
+}
+
+.stat-pill.legendary-pill.active {
+  background: linear-gradient(135deg, #7a5500, #8a3a00);
+  color: #ffe080;
+  box-shadow: 0 2px 12px rgba(220, 160, 0, 0.5);
+}
+
 .loader {
 	text-align: center;
 	padding: 40px;
