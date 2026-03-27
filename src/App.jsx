@@ -75,6 +75,42 @@ const LEGENDARY_IDS = new Set([
   1025,                   // Pecharunt
 ]);
 
+// Nombres oficiales en español de los pokémon que difieren del inglés.
+// Fuente: https://bulbapedia.bulbagarden.net/wiki/List_of_Spanish_Pokémon_names
+// Clave: ID de Pokédex Nacional (el mismo que en el JSON)
+
+const SPANISH_NAMES = {
+  // Gen 7
+  772: "Código Cero",      // Type: Null
+
+  // Gen 9 - Paradoja Pasado (Scarlet)
+  984: "Colmilargo",       // Great Tusk
+  985: "Colagrito",        // Scream Tail
+  986: "Furioseta",        // Brute Bonnet
+  987: "Melenaleteo",      // Flutter Mane
+  988: "Reptalada",        // Slither Wing
+  989: "Pelarena",         // Sandy Shocks
+  1005: "Bramaluna",       // Roaring Moon
+
+  // Gen 9 - Paradoja Futuro (Violet)
+  990: "Ferrodada",        // Iron Treads
+  991: "Ferrosaco",        // Iron Bundle
+  992: "Ferropalmas",      // Iron Hands
+  993: "Ferrocuello",      // Iron Jugulis
+  994: "Ferropolilla",     // Iron Moth
+  995: "Ferropúas",        // Iron Thorns
+  1006: "Ferropaladín",    // Iron Valiant
+
+  // DLC - The Indigo Disk
+  1009: "Ondulagua",       // Walking Wake
+  1010: "Ferroverdor",     // Iron Leaves
+  1020: "Flamariete",      // Gouging Fire
+  1021: "Electrofuria",    // Raging Bolt
+  1022: "Ferromole",       // Iron Boulder
+  1023: "Ferrotesta",      // Iron Crown
+};
+
+const getSpanishName = (id) => SPANISH_NAMES[id] ?? null;
 const isLegendary = (id) => LEGENDARY_IDS.has(id);
 
 const PAGE_SIZE = 40;
@@ -120,10 +156,14 @@ export default function Pokedex() {
                  : null;
 
   const filtered = search.trim()
-    ? (baseList ?? pokemons).filter(p =>
-        p.name.includes(search.toLowerCase()) ||
-        String(p.id).includes(search.trim())
-      )
+    ? (baseList ?? pokemons).filter(p => {
+        const spanishName = getSpanishName(p.id);
+        return (
+          p.name.includes(search.toLowerCase()) ||
+          String(p.id).includes(search.trim()) ||
+          (spanishName && spanishName.toLowerCase().includes(search.toLowerCase()))
+        );
+      })
     : baseList;
 
   const visibleList = filtered ?? pokemons.slice(0, displayCount);
