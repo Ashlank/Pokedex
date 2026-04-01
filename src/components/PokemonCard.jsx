@@ -170,7 +170,7 @@ export default function PokemonCard({ pokemon, caught, shiny, onToggleCaught, on
 
       {/* Panel de debilidades */}
       <div className={`weakness-wrap ${expanded ? "open" : ""}`}>
-        {expanded && <WeaknessPanel types={pokemon.types} />}
+        <WeaknessPanel types={pokemon.types} />
       </div>
 
       <div className="card-actions">
