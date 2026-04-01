@@ -199,7 +199,6 @@ button.stat-pill:hover {
 		box-shadow 0.2s,
 		border-color 0.2s;
 	position: relative;
-	overflow: hidden;
 	cursor: default;
 }
 
@@ -220,6 +219,7 @@ button.stat-pill:hover {
 	transform: translateY(-4px) scale(1.02);
 	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 	border-color: var(--type-color, #52305e);
+	z-index: 10;
 }
 
 .poke-card.caught {
@@ -247,7 +247,7 @@ button.stat-pill:hover {
 
 .icon-animation {
 	font-size: 1.2rem;
-	animation: sparkle 1.5s ease-in-out infinite;
+	animation: sparkle 1.5s ease-in-out 1;
 }
 
 @keyframes sparkle {
@@ -514,4 +514,206 @@ button.stat-pill:hover {
 	.main {
 		padding: 20px 12px 60px;
 	}
+}
+
+/* ── Evoluciones tooltip ─────────────────────────────────────────────────── */
+
+.evo-btn-wrap {
+  position: relative;
+  flex: 1;
+	margin-top: 8px;
+}
+
+.evo-btn {
+  width: 100%;
+  border-color: #4a3868;
+  background: #2a1c3c;
+  color: #a080d0;
+}
+
+.evo-btn:hover {
+  border-color: #9060d0;
+  background: #382850;
+  color: #c0a0f0;
+  transform: scale(1.05);
+}
+
+.evo-btn.active {
+  border-color: #9060d0;
+  background: #5a3090;
+  color: #e0c8ff;
+  box-shadow: 0 2px 8px rgba(140, 80, 220, 0.4);
+}
+
+.evo-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+  animation: evo-pop 0.15s ease-out;
+}
+
+@keyframes evo-pop {
+  from { opacity: 0; transform: translateX(-50%) scale(0.92) translateY(6px); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1) translateY(0); }
+}
+
+.evo-tooltip-inner {
+  background: #2e1c3c;
+  border: 2px solid #5a3090;
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.evo-tooltip-chain {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.evo-mon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.evo-mon.evo-current {
+  background: rgba(140, 80, 220, 0.25);
+  outline: 2px solid #9060d0;
+}
+
+.evo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+.evo-name {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #c0a0f0;
+  text-transform: capitalize;
+  text-align: center;
+  max-width: 64px;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.evo-arrow {
+  color: #7050a0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Panel de debilidades ────────────────────────────────────────────────── */
+
+.weakness-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.weakness-wrap.open {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.weakness-panel {
+  border-top: 1.5px solid #3e2450;
+  margin: 8px 0;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weakness-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #7a5090;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.weakness-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.weakness-mult {
+  font-size: 0.65rem;
+  font-weight: 900;
+  border-radius: 6px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.weakness-mult.x4 {
+  background: #7a1020;
+  color: #ffb0b8;
+  box-shadow: 0 0 8px rgba(255, 60, 80, 0.3);
+}
+
+.weakness-mult.x2 {
+  background: #6a3010;
+  color: #ffb888;
+}
+
+.weakness-types {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.weakness-badge {
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 999px;
+  text-transform: capitalize;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.3px;
+}
+
+/* ── Expand hint ─────────────────────────────────────────────────────────── */
+
+.expand-hint {
+	background: none;
+	border: none;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #5a3a70;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  transition: opacity 0.2s;
+	cursor: pointer;
+}
+
+.expand-hint:hover {
+  color: #9060c0;
+}
+
+/* Card expandida — borde más pronunciado */
+.poke-card.expanded {
+  border-color: #9060d0;
+  box-shadow: 0 8px 28px rgba(140, 80, 220, 0.25);
 }
