@@ -7440,7 +7440,10 @@
     "types": [
       "fire"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      554,
+      555
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/554.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/554.png"
   },
@@ -7450,7 +7453,10 @@
     "types": [
       "fire"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      554,
+      555
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/555.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/555.png"
   },
@@ -8933,7 +8939,10 @@
       "fire",
       "normal"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      667,
+      668
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/667.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/667.png"
   },
@@ -8944,7 +8953,10 @@
       "fire",
       "normal"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      667,
+      668
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/668.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/668.png"
   },
@@ -9059,7 +9071,10 @@
     "types": [
       "psychic"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      677,
+      678
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/677.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/677.png"
   },
@@ -9069,7 +9084,10 @@
     "types": [
       "psychic"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      677,
+      678
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/678.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/678.png"
   },
@@ -9947,7 +9965,10 @@
     "types": [
       "rock"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      744,
+      745
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/744.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/744.png"
   },
@@ -9957,7 +9978,10 @@
     "types": [
       "rock"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      744,
+      745
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/745.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/745.png"
   },
@@ -10734,7 +10758,10 @@
     "types": [
       "steel"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      808,
+      809
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/808.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/808.png"
   },
@@ -10744,7 +10771,10 @@
     "types": [
       "steel"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      808,
+      809
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/809.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/809.png"
   },
@@ -11274,7 +11304,10 @@
       "electric",
       "poison"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      848,
+      849
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/848.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/848.png"
   },
@@ -11285,7 +11318,10 @@
       "electric",
       "poison"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      848,
+      849
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/849.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/849.png"
   },
@@ -11822,7 +11858,10 @@
     "types": [
       "fighting"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      891,
+      892
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/891.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/891.png"
   },
@@ -11833,7 +11872,10 @@
       "fighting",
       "dark"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      891,
+      892
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/892.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/892.png"
   },
@@ -12127,7 +12169,10 @@
     "types": [
       "normal"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      915,
+      916
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/915.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/915.png"
   },
@@ -12137,7 +12182,10 @@
     "types": [
       "normal"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      915,
+      916
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/916.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/916.png"
   },
@@ -12244,7 +12292,10 @@
     "types": [
       "normal"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      924,
+      925
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/924.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/924.png"
   },
@@ -12254,7 +12305,10 @@
     "types": [
       "normal"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      924,
+      925
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/925.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/925.png"
   },
@@ -12765,7 +12819,10 @@
     "types": [
       "water"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      963,
+      964
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/963.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/963.png"
   },
@@ -12775,7 +12832,10 @@
     "types": [
       "water"
     ],
-    "evolutionChain": null,
+    "evolutionChain": [
+      963,
+      964
+    ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/964.png",
     "shinySprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/964.png"
   },
