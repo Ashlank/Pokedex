@@ -4,6 +4,7 @@ import PokeBall from "./PokeBall";
 import SparkleIcon from "./SparkleIcon";
 import { TYPE_COLORS, TYPE_EMOJI, getWeaknesses } from "../data/typeChart";
 import pokemons from "../data/pokemon.json";
+import SpawnInfo from "./SpawnInfo"
 
 const pokemonById = Object.fromEntries(pokemons.map((p) => [p.id, p]));
 
@@ -190,6 +191,8 @@ export default function PokemonCard({ pokemon, caught, shiny, onToggleCaught, on
           <SparkleIcon />
           Shiny
         </button>
+        
+        <SpawnInfo pokemon={pokemon} />
 
       </div>
 

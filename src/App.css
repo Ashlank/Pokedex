@@ -33,11 +33,6 @@ body {
 	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
-.header-inner {
-	max-width: 1400px;
-	margin: 0 auto;
-}
-
 .header-top {
 	display: flex;
 	align-items: center;
@@ -356,6 +351,7 @@ button.stat-pill:hover {
 
 .card-actions {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 6px;
 }
 
@@ -716,4 +712,163 @@ button.stat-pill:hover {
 .poke-card.expanded {
   border-color: #9060d0;
   box-shadow: 0 8px 28px rgba(140, 80, 220, 0.25);
+}
+
+/* ── Spawn button ─────────────────────────────────────────────────────────── */
+
+.spawn-btn {
+  border-color: #1a4a2e;
+  background: #0e2a1a;
+  color: #4caf78;
+}
+
+.spawn-btn:hover {
+  border-color: #4caf78;
+  background: #183828;
+  color: #6ed89a;
+  transform: scale(1.05);
+}
+
+.spawn-btn.active {
+  border-color: #4caf78;
+  background: #1e5c34;
+  color: #a8ffc4;
+  box-shadow: 0 2px 8px rgba(76, 175, 120, 0.4);
+}
+
+/* ── Spawn popup ──────────────────────────────────────────────────────────── */
+
+.spawn-popup {
+  width: 420px;
+  max-width: 95vw;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.7));
+  animation: evo-pop 0.15s ease-out;
+}
+
+.spawn-popup-header {
+  background: #1a3a24;
+  border: 2px solid #4caf78;
+  border-bottom: 1px solid #2a5a38;
+  border-radius: 14px 14px 0 0;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #a8ffc4;
+}
+
+.spawn-close {
+  background: none;
+  border: none;
+  color: #6ed89a;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0 4px;
+  line-height: 1;
+  font-family: "Nunito", sans-serif;
+}
+.spawn-close:hover { color: #fff; }
+
+.spawn-popup-body {
+  background: #0e2018;
+  border: 2px solid #4caf78;
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  padding: 8px;
+  max-height: 360px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2a5a38 transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spawn-popup-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #4caf78;
+}
+
+/* ── Spawn rows ───────────────────────────────────────────────────────────── */
+
+.spawn-row {
+  background: #162a1e;
+  border: 1px solid #2a4a34;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spawn-variant {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #6ed89a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #2a4a34;
+}
+
+.spawn-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.spawn-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spawn-biomes {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.spawn-biomes.excluded .spawn-value {
+  color: #e07070;
+  text-decoration: line-through;
+  text-decoration-color: #c04040;
+}
+
+.spawn-label {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #4a8a60;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.spawn-value {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #c8e8d8;
+  line-height: 1.3;
+}
+
+.spawn-bucket {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid;
+  letter-spacing: 0.3px;
 }
